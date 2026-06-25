@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phoenix Pride Project (3P) | Empowering LGBTQ+ Young Adult Survivors in Las Vegas</title>
+  <meta name="description" content="Phoenix Pride Project is a forming nonprofit in Las Vegas dedicated to empowering LGBTQ+ young adult survivors of trafficking and those escaping survival sex work through trauma-informed care, peer navigation, and community connection. 501(c)(3) pending." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --orange: #F26522;
+      --purple: #6B2C91;
+      --teal: #008B8B;
+      --bg: #F5F0EB;
+      --white: #FDFAF7;
+      --charcoal: #2D2D2D;
+      --mid: #7A6F67;
+      --border: #DDD5CC;
+      --orange-light: #FEF0E8;
+      --purple-light: #F3EAF8;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--charcoal);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--purple);
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-logo .flame {
+      color: var(--orange);
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.25rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .nav-links a:hover { background: var(--bg); color: var(--purple); }
+    .nav-links a.active { color: var(--orange); }
+
+    .nav-cta {
+      background: var(--orange);
+      color: var(--white) !important;
+      border-radius: 6px !important;
+      padding: 0.4rem 1rem !important;
+      font-weight: 600 !important;
+    }
+
+    .nav-cta:hover { background: #d4551a !important; color: var(--white) !important; }
+
+    /* ── PAGES ── */
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 5rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    section.full-width {
+      max-width: none;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--purple) 0%, #3d1558 50%, #1a0a2e 100%);
+      color: var(--white);
+      padding: 6rem 2rem 5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 60% 40%, rgba(242,101,34,0.25) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-inner { position: relative; max-width: 760px; margin: 0 auto; }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(242,101,34,0.2);
+      border: 1px solid rgba(242,101,34,0.4);
+      color: #FFB07A;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      border-radius: 100px;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      color: #fff;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: #FFB07A;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.85);
+      max-width: 620px;
+      margin: 0 auto 2rem;
+      line-height: 1.75;
+    }
+
+    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.6rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+    }
+
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,0,0,0.18); }
+    .btn:active { transform: translateY(0); }
+
+    .btn-primary { background: var(--orange); color: #fff; }
+    .btn-primary:hover { background: #d4551a; }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.5);
+    }
+
+    .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+
+    .btn-purple { background: var(--purple); color: #fff; }
+    .btn-purple:hover { background: #551f78; }
+
+    .btn-teal { background: var(--teal); color: #fff; }
+    .btn-teal:hover { background: #006f6f; }
+
+    /* ── EYEBROW ── */
+    .eyebrow {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.6rem;
+    }
+
+    /* ── HEADINGS ── */
+    h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--purple);
+      margin-bottom: 1.25rem;
+    }
+
+    h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 0.6rem;
+    }
+
+    p { margin-bottom: 1rem; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── PILLARS GRID ── */
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+
+    .pillar {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 1.75rem;
+      border-left: 4px solid var(--orange);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .pillar:nth-child(2) { border-left-color: var(--purple); }
+    .pillar:nth-child(3) { border-left-color: var(--teal); }
+    .pillar:nth-child(4) { border-left-color: var(--orange); }
+    .pillar:nth-child(5) { border-left-color: var(--purple); }
+
+    .pillar:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.09); }
+
+    .pillar-icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
+    .pillar h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .pillar p { font-size: 0.95rem; color: var(--mid); margin: 0; }
+
+    /* ── CALLOUT BAND ── */
+    .band {
+      background: var(--purple);
+      color: #fff;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .band h2 { color: #fff; }
+    .band p { color: rgba(255,255,255,0.85); max-width: 620px; margin: 0 auto 2rem; }
+
+    /* ── STATS TABLE ── */
+    .stats-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .stats-table tr { border-bottom: 1px solid var(--border); }
+    .stats-table tr:last-child { border-bottom: none; }
+    .stats-table td { padding: 1rem 1.5rem; font-size: 0.97rem; }
+    .stats-table td:first-child { color: var(--mid); font-weight: 500; width: 42%; }
+    .stats-table td:last-child { color: var(--charcoal); font-weight: 600; }
+
+    /* ── VALUES GRID ── */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+
+    .value-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 1.5rem;
+      border-top: 3px solid var(--orange);
+    }
+
+    .value-card:nth-child(even) { border-top-color: var(--purple); }
+    .value-card h3 { font-size: 1rem; color: var(--purple); margin-bottom: 0.5rem; }
+    .value-card p { font-size: 0.92rem; color: var(--mid); margin: 0; }
+
+    /* ── BOARD TABLE ── */
+    .board-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+    }
+
+    .board-table th {
+      text-align: left;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--mid);
+      padding: 0.6rem 1rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .board-table td { padding: 0.85rem 1rem; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+    .board-table tr:last-child td { border-bottom: none; }
+
+    .badge-open {
+      display: inline-block;
+      background: var(--orange-light);
+      color: var(--orange);
+      border-radius: 100px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.2rem 0.65rem;
+    }
+
+    .badge-filled {
+      display: inline-block;
+      background: var(--purple-light);
+      color: var(--purple);
+      border-radius: 100px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.2rem 0.65rem;
+    }
+
+    /* ── PROGRAMS ── */
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .program-block {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 1.75rem;
+    }
+
+    .program-block h3 { font-size: 1rem; color: var(--purple); margin-bottom: 0.4rem; }
+    .program-block p { font-size: 0.92rem; color: var(--mid); margin: 0; }
+    .program-block + .program-block { }
+
+    /* ── PATHWAY ── */
+    .pathway {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .pathway-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pathway-step:last-child { border-bottom: none; }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      background: var(--orange);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-top: 0.15rem;
+    }
+
+    .step-text strong { color: var(--charcoal); display: block; margin-bottom: 0.15rem; }
+    .step-text span { font-size: 0.92rem; color: var(--mid); }
+
+    /* ── FORM ── */
+    .form-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      margin-top: 2rem;
+    }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label { display: block; font-size: 0.88rem; font-weight: 600; color: var(--charcoal); margin-bottom: 0.4rem; }
+    .form-group input[type="text"],
+    .form-group input[type="email"] {
+      width: 100%;
+      padding: 0.65rem 0.9rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      background: var(--bg);
+      color: var(--charcoal);
+      transition: border-color 0.15s;
+    }
+
+    .form-group input:focus { outline: none; border-color: var(--purple); }
+
+    .checkbox-group { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .checkbox-item input[type="checkbox"] {
+      accent-color: var(--purple);
+      width: 16px;
+      height: 16px;
+    }
+
+    .form-note { font-size: 0.85rem; color: var(--mid); margin-top: 1rem; }
+
+    /* ── DONOR TABLE ── */
+    .donor-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+    }
+
+    .donor-table th {
+      text-align: left;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--mid);
+      padding: 0.6rem 1rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .donor-table td { padding: 0.9rem 1rem; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+    .donor-table tr:last-child td { border-bottom: none; }
+    .donor-table tr:hover td { background: var(--orange-light); }
+
+    .level-name { font-weight: 700; color: var(--purple); }
+
+    /* ── CONTACT ── */
+    .crisis-list {
+      list-style: none;
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .crisis-list li {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      border-left: 4px solid var(--teal);
+    }
+
+    .crisis-list .org-name { font-weight: 700; color: var(--charcoal); }
+    .crisis-list .org-contact { font-size: 0.92rem; color: var(--mid); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--charcoal);
+      color: rgba(255,255,255,0.7);
+      padding: 3rem 2rem 2rem;
+    }
+
+    .footer-grid {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-col h4 {
+      font-family: 'Fraunces', serif;
+      color: #fff;
+      font-size: 1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-col p, .footer-col a { font-size: 0.88rem; color: rgba(255,255,255,0.6); text-decoration: none; }
+    .footer-col a:hover { color: #FFB07A; }
+
+    .footer-btns { display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-btn {
+      display: inline-block;
+      background: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.85);
+      border-radius: 6px;
+      padding: 0.4rem 0.85rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+      text-align: left;
+      transition: background 0.15s;
+    }
+
+    .footer-btn:hover { background: rgba(255,255,255,0.18); }
+
+    .footer-bottom {
+      max-width: 900px;
+      margin: 1.5rem auto 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .legal-disclaimer {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.45);
+      max-width: 900px;
+      margin: 1.25rem auto 0;
+      line-height: 1.6;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 1.25rem;
+    }
+
+    /* ── ABOUT HERO ── */
+    .about-hero {
+      background: linear-gradient(135deg, #1a0a2e 0%, #3d1558 100%);
+      color: #fff;
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .about-hero h1 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #fff; margin-bottom: 1rem; }
+    .about-hero p { color: rgba(255,255,255,0.8); max-width: 580px; margin: 0 auto; }
+
+    /* ── THREE P ── */
+    .three-p {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .p-card {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      background: var(--white);
+      border-radius: 14px;
+    }
+
+    .p-letter {
+      font-family: 'Fraunces', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+
+    .p-card:nth-child(1) .p-letter { color: var(--orange); }
+    .p-card:nth-child(2) .p-letter { color: var(--purple); }
+    .p-card:nth-child(3) .p-letter { color: var(--teal); }
+
+    .p-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .p-card p { font-size: 0.92rem; color: var(--mid); margin: 0; }
+
+    /* ── INLINE NAV SECTION HEADER ── */
+    .page-hero {
+      background: var(--purple-light);
+      border-bottom: 2px solid var(--border);
+      padding: 3rem 2rem;
+    }
+
+    .page-hero-inner { max-width: 900px; margin: 0 auto; }
+    .page-hero h1 { font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 700; color: var(--purple); margin-bottom: 0.5rem; }
+    .page-hero p { color: var(--mid); max-width: 580px; margin: 0; }
+
+    /* ── UTILITY ── */
+    .divider { border: none; border-top: 1.5px solid var(--border); margin: 1rem 0; }
+
+    .note {
+      font-size: 0.88rem;
+      color: var(--mid);
+      font-style: italic;
+      margin-top: 0.5rem;
+    }
+
+    .text-orange { color: var(--orange); }
+    .text-purple { color: var(--purple); }
+    .text-teal { color: var(--teal); }
+
+    .mt-2 { margin-top: 2rem; }
+    .mt-1 { margin-top: 1rem; }
+
+    .quote-block {
+      border-left: 4px solid var(--orange);
+      padding: 1rem 1.5rem;
+      background: var(--white);
+      border-radius: 0 10px 10px 0;
+      margin: 1.5rem 0;
+    }
+
+    .quote-block p { font-size: 1.05rem; font-style: italic; color: var(--charcoal); margin: 0; }
+
+    @media (max-width: 680px) {
+      .three-p { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      nav { padding: 0 1rem; }
+      .nav-links { display: none; }
+      .hero h1 { font-size: 2rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#" onclick="showPage('home')">
+    <span class="flame">🔥</span> Phoenix Pride Project
+  </a>
+  <ul class="nav-links">
+    <li><a href="#" onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
+    <li><a href="#" onclick="showPage('about')" id="nav-about">About</a></li>
+    <li><a href="#" onclick="showPage('programs')" id="nav-programs">Programs</a></li>
+    <li><a href="#" onclick="showPage('get-involved')" id="nav-get-involved">Get Involved</a></li>
+    <li><a href="#" onclick="showPage('support')" id="nav-support">Support Us</a></li>
+    <li><a href="#" onclick="showPage('contact')" id="nav-contact">Contact</a></li>
+    <li><a href="#" onclick="showPage('get-involved')" class="nav-cta">Join Our List</a></li>
+  </ul>
+</nav>
+
+<!-- ═══════════════════════════════════════════ PAGE: HOME ═══════ -->
+<div id="page-home" class="page active">
+
+  <!-- Hero -->
+  <div class="hero full-width">
+    <div class="hero-inner">
+      <span class="hero-badge">Forming Nonprofit &middot; Las Vegas, Nevada</span>
+      <h1>Rising <em>Together</em> for<br>LGBTQ+ Young Adults<br>in Las Vegas</h1>
+      <p>Phoenix Pride Project — or 3P, as our community calls us — is a new nonprofit forming in Las Vegas to empower LGBTQ+ young adult survivors of trafficking and those escaping sex work for survival. We are not yet a 501(c)(3), but we are building. And we are not building alone.</p>
+      <div class="hero-actions">
+        <a href="#" class="btn btn-primary" onclick="showPage('get-involved')">Join Our Email List</a>
+        <a href="#" class="btn btn-outline" onclick="showPage('programs')">Learn About Our Work</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pillars -->
+  <section>
+    <p class="eyebrow">What We Are Building</p>
+    <h2>Five Pillars of Support</h2>
+    <p>These are not programs we are running today. They are the vision we are working toward, shaped by survivors, advocates, and the real gaps we see in Las Vegas.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-icon">💛</div>
+        <h3>Healing &amp; Wellness</h3>
+        <p>Trauma-informed care, peer support circles, and identity-affirming mental health navigation.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🏠</div>
+        <h3>Housing &amp; Safety</h3>
+        <p>Emergency shelter referrals, transitional housing pathways, and safety planning for young adults in crisis.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">📚</div>
+        <h3>Education &amp; Employment</h3>
+        <p>Scholarship support (coming Year 2), job readiness training, and connections to affirming employers.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🌟</div>
+        <h3>Leadership &amp; Community</h3>
+        <p>Survivor-led mentorship, peer navigator training, and monthly Community Pride Circles.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🤝</div>
+        <h3>Outreach &amp; Prevention</h3>
+        <p>Street outreach, Know Your Rights workshops, and peer-led prevention education.</p>
+      </div>
+    </div>
+    <p class="note" style="margin-top:1.5rem;">Scholarships are planned for Year 2, pending 501(c)(3) status and program infrastructure.</p>
+  </section>
+
+  <!-- Navigation Network band -->
+  <div class="band">
+    <p class="eyebrow" style="color:#FFB07A;">Where We Are Starting</p>
+    <h2>The Phoenix Navigation Network</h2>
+    <p>We are launching with one thing done well. Five trained volunteer peer navigators. A warm referral system. Quarterly Know Your Rights workshops. Monthly Community Pride Circles for connection and healing.</p>
+    <p>No building. No bureaucracy. Just people who care, connecting young adults to housing, legal aid, mental health resources, and community.</p>
+    <a href="#" class="btn btn-primary" onclick="showPage('get-involved')">Get Involved</a>
+  </div>
+
+  <!-- Numbers -->
+  <section>
+    <p class="eyebrow">Transparency</p>
+    <h2>Where We Are Right Now</h2>
+    <table class="stats-table">
+      <tr><td>Status</td><td>Nevada nonprofit corporation, 501(c)(3) pending</td></tr>
+      <tr><td>Target Launch</td><td>Fall 2027</td></tr>
+      <tr><td>Year 1 Budget Goal</td><td>$27,600</td></tr>
+      <tr><td>Year 1 Focus</td><td>Peer Navigator Network, partnerships, board formation</td></tr>
+      <tr><td>Scholarships</td><td>Deferred to Year 2</td></tr>
+      <tr><td>Geographic Focus</td><td>Las Vegas and Clark County, Nevada</td></tr>
+      <tr><td>Founded By</td><td>Ronnel Jones, Executive Director</td></tr>
+    </table>
+    <div class="quote-block" style="margin-top:2rem;">
+      <p>We believe in transparency before we have a track record to show. Every dollar we raise will be accounted for. Every program we launch will be tested first. We are small on purpose right now, so we can grow with integrity.</p>
+    </div>
+  </section>
+
+  <!-- Stay connected -->
+  <section style="background: var(--orange-light); border-radius: 16px; margin-bottom: 3rem;">
+    <p class="eyebrow">Stay Connected</p>
+    <h2>Be Part of the Founding Community</h2>
+    <p>We are not asking for donations yet. We cannot offer tax deductions until our 501(c)(3) status is approved. What we are asking for is your attention, your voice, and your presence.</p>
+    <p>Join our email list. Share our name. Show up to a Community Pride Circle. When we are ready to fundraise, you will be the first to know.</p>
+    <a href="#" class="btn btn-purple" onclick="showPage('get-involved')" style="margin-top:0.5rem;">Join Our Email List</a>
+    <p class="note" style="margin-top:1rem;">No social media yet, but it is coming. For now, email is how we reach you.</p>
+  </section>
+
+</div><!-- /page-home -->
+
+<!-- ═══════════════════════════════════════════ PAGE: ABOUT ═══════ -->
+<div id="page-about" class="page">
+
+  <div class="about-hero">
+    <h1>Why Phoenix Pride<br>Project Exists</h1>
+    <p>The story, the meaning, the values, and the people building 3P.</p>
+  </div>
+
+  <!-- Story -->
+  <section>
+    <p class="eyebrow">Our Story</p>
+    <h2>Built on What We Have Seen</h2>
+    <div class="quote-block">
+      <p>I am Ronnel Jones, and I am building Phoenix Pride Project because I have seen what happens when young adults are rejected for who they are. I have watched the gaps between "services that exist" and "services that actually help" swallow whole futures.</p>
+    </div>
+    <p>Las Vegas is a national hotspot for trafficking. Hundreds of young adults are identified as victims here every year. LGBTQ+ young adults face unique risks due to family rejection, homelessness, and discrimination. These factors increase susceptibility to exploitation and trafficking. And too many of the shelters, clinics, and programs meant to help are not safe for queer and trans young adults.</p>
+    <p>I am not a clinician. I am not a politician. I am a person who believes that connection is the first form of survival. Phoenix Pride Project starts there.</p>
+  </section>
+
+  <!-- What 3P Means -->
+  <section style="padding-top:0;">
+    <p class="eyebrow">What 3P Means</p>
+    <h2>Three P's. One Purpose.</h2>
+    <div class="three-p">
+      <div class="p-card">
+        <div class="p-letter">P</div>
+        <h3>Phoenix</h3>
+        <p>Because we believe in rising. Not once, but as many times as it takes.</p>
+      </div>
+      <div class="p-card">
+        <div class="p-letter">P</div>
+        <h3>Pride</h3>
+        <p>Because identity is not the problem. It is the power.</p>
+      </div>
+      <div class="p-card">
+        <div class="p-letter">P</div>
+        <h3>Project</h3>
+        <p>Because this is work. Ongoing, imperfect, collaborative work.</p>
+      </div>
+    </div>
+    <p style="margin-top:1.5rem; color: var(--mid);">3P is not just a nickname. It is a reminder that every part of this name matters.</p>
+  </section>
+
+  <!-- Values -->
+  <section style="padding-top:0;">
+    <p class="eyebrow">Our Values</p>
+    <h2>What We Stand For</h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <h3>Empowerment</h3>
+        <p>We believe in the strength and resilience of LGBTQ+ young adult survivors. Our programs foster self-advocacy, leadership, and personal growth.</p>
+      </div>
+      <div class="value-card">
+        <h3>Inclusivity &amp; Affirmation</h3>
+        <p>We create safe, welcoming spaces for all, regardless of sexual orientation, gender identity, race, or background. Every person is seen, respected, and valued.</p>
+      </div>
+      <div class="value-card">
+        <h3>Survivor-Centered Care</h3>
+        <p>The voices, experiences, and needs of survivors guide every aspect of our work. We honor autonomy and dignity above all.</p>
+      </div>
+      <div class="value-card">
+        <h3>Community &amp; Collaboration</h3>
+        <p>We partner with survivors, peer mentors, local nonprofits, and advocates to strengthen networks and expand access to resources.</p>
+      </div>
+      <div class="value-card">
+        <h3>Equity &amp; Justice</h3>
+        <p>We address systemic barriers and discrimination that disproportionately impact LGBTQ+ young adults. Our advocacy challenges root causes.</p>
+      </div>
+      <div class="value-card">
+        <h3>Integrity &amp; Accountability</h3>
+        <p>We operate with transparency and ethical stewardship. We hold ourselves accountable to the communities we serve.</p>
+      </div>
+      <div class="value-card">
+        <h3>Healing &amp; Hope</h3>
+        <p>We believe healing is possible. Through trauma-informed care and unwavering support, we build pathways to recovery and a brighter future.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Board -->
+  <section style="padding-top:0; padding-bottom:5rem;">
+    <p class="eyebrow">Our Board</p>
+    <h2>Who Is Steering This</h2>
+    <p>We are actively recruiting our inaugural board. Here is what we are looking for:</p>
+    <table class="board-table">
+      <thead>
+        <tr>
+          <th>Role</th>
+          <th>Status</th>
+          <th>What We Need</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>President / Executive Director</td>
+          <td><span class="badge-filled">Filled</span></td>
+          <td>Ronnel Jones</td>
+        </tr>
+        <tr>
+          <td>Vice President</td>
+          <td><span class="badge-open">Open</span></td>
+          <td>Strong facilitator, succession-ready</td>
+        </tr>
+        <tr>
+          <td>Secretary</td>
+          <td><span class="badge-open">Open</span></td>
+          <td>Detail-oriented, deadline-driven</td>
+        </tr>
+        <tr>
+          <td>Treasurer</td>
+          <td><span class="badge-open">Open</span></td>
+          <td>Accounting or nonprofit financial background</td>
+        </tr>
+        <tr>
+          <td>At-Large Directors</td>
+          <td><span class="badge-open">Open</span></td>
+          <td>Legal, development, clinical, or lived experience</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:1.25rem; color:var(--mid);">We are especially seeking at least one LGBTQ+ identified member and at least one person with lived experience of trafficking, homelessness, or survival sex work.</p>
+    <a href="#" class="btn btn-purple mt-2" onclick="showPage('contact')">Email Us About Board Opportunities</a>
+  </section>
+
+</div><!-- /page-about -->
+
+<!-- ═══════════════════════════════════════════ PAGE: PROGRAMS ═══════ -->
+<div id="page-programs" class="page">
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <p class="eyebrow">Programs</p>
+      <h1>What We Are Working Toward</h1>
+      <p>We are not running all of these programs today. We are starting with the Phoenix Navigation Network and building outward. Everything here is grounded in trauma-informed, LGBTQ+ affirming practice.</p>
+    </div>
+  </div>
+
+  <!-- Five pillars expanded -->
+  <section>
+    <p class="eyebrow">Five Core Areas</p>
+    <h2>1. Healing &amp; Wellness</h2>
+    <div class="programs-grid">
+      <div class="program-block">
+        <h3>Phoenix Rising Counseling Program</h3>
+        <p>Trauma-informed therapy, art therapy, and peer support circles.</p>
+      </div>
+      <div class="program-block">
+        <h3>Healing Through Identity</h3>
+        <p>LGBTQ+ affirming mental health services and gender-affirming care navigation.</p>
+      </div>
+      <div class="program-block">
+        <h3>Wellness Wednesdays</h3>
+        <p>Weekly drop-in sessions for yoga, mindfulness, nutrition, and self-care education.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <h2>2. Housing &amp; Safety</h2>
+    <div class="programs-grid">
+      <div class="program-block">
+        <h3>Safe Nest Initiative</h3>
+        <p>Emergency housing for survivors with wraparound services.</p>
+      </div>
+      <div class="program-block">
+        <h3>Transitional Thrive Housing</h3>
+        <p>Six to eighteen month housing with case management and life skills support.</p>
+      </div>
+      <div class="program-block">
+        <h3>Safety &amp; Advocacy Hub</h3>
+        <p>Legal advocacy, safety planning, and navigation of law enforcement and immigration systems.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <h2>3. Education &amp; Employment</h2>
+    <div class="programs-grid">
+      <div class="program-block">
+        <h3>EmpowerEd</h3>
+        <p>GED prep, tutoring, and college application support.</p>
+      </div>
+      <div class="program-block">
+        <h3>PrideWorks</h3>
+        <p>Job readiness training, resume building, and workplace rights education.</p>
+      </div>
+      <div class="program-block">
+        <h3>Career Launchpad</h3>
+        <p>Paid internships, mentorships, and partnerships with LGBTQ+ affirming employers.</p>
+      </div>
+    </div>
+    <p class="note" style="margin-top:1.25rem;">Scholarships are planned for Year 2, pending 501(c)(3) status and infrastructure.</p>
+  </section>
+
+  <section style="padding-top:0;">
+    <h2>4. Leadership &amp; Community Building</h2>
+    <div class="programs-grid">
+      <div class="program-block">
+        <h3>Survivor Leadership Academy</h3>
+        <p>Public speaking, advocacy training, and leadership development.</p>
+      </div>
+      <div class="program-block">
+        <h3>Peer Navigator Program</h3>
+        <p>Trained survivor mentors guiding participants through service systems.</p>
+      </div>
+      <div class="program-block">
+        <h3>Community Pride Circles</h3>
+        <p>Monthly gatherings for connection, healing, and identity celebration.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <h2>5. Outreach &amp; Prevention</h2>
+    <div class="programs-grid">
+      <div class="program-block">
+        <h3>Street Outreach Team</h3>
+        <p>Harm reduction, resource distribution, and crisis intervention.</p>
+      </div>
+      <div class="program-block">
+        <h3>Know Your Rights Workshops</h3>
+        <p>Legal literacy for LGBTQ+ young adults and survivors.</p>
+      </div>
+      <div class="program-block">
+        <h3>Youth Prevention Ambassadors</h3>
+        <p>Peer-led education in schools and shelters for trafficking prevention and safety.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Is Active Now -->
+  <section style="padding-top:0; background: var(--purple-light); border-radius:16px; margin-bottom:3rem;">
+    <p class="eyebrow">Active Now</p>
+    <h2>The Phoenix Navigation Network</h2>
+    <p>This is our starting point. No building. No full-time staff. Just trained volunteers and real connections.</p>
+
+    <div class="programs-grid" style="margin-top:1.5rem;">
+      <div class="program-block">
+        <h3>Peer Navigator Program</h3>
+        <p>Five volunteer navigators trained in trauma-informed care, active listening, and resource knowledge. Background checks required. Monthly supervision with the Executive Director.</p>
+      </div>
+      <div class="program-block">
+        <h3>Know Your Rights Workshops</h3>
+        <p>Virtual format, co-hosted with local legal partners. Quarterly. Topics include housing discrimination, police interaction, foster care rights, and workplace protections. Recorded for later access.</p>
+      </div>
+      <div class="program-block">
+        <h3>Digital Resource Hub</h3>
+        <p>A curated referral directory on our website. Simple intake form. Categorized resources: housing, legal, health, food, crisis. Mobile-friendly.</p>
+      </div>
+      <div class="program-block">
+        <h3>Community Pride Circles</h3>
+        <p>Monthly gatherings featuring survivor speakers with paid honoraria and full consent protocols. Suggested donation $25 to $100. Builds our monthly donor base.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:2.5rem;">
+      <p class="eyebrow">Service Pathway</p>
+      <h3 style="font-family:'Fraunces',serif; color:var(--purple); margin-bottom:1rem;">How We Help, Step by Step</h3>
+      <div class="pathway">
+        <div class="pathway-step">
+          <div class="step-num">1</div>
+          <div class="step-text"><strong>Intake</strong><span>Phone, web, or partner referral</span></div>
+        </div>
+        <div class="pathway-step">
+          <div class="step-num">2</div>
+          <div class="step-text"><strong>Needs Assessment</strong><span>Non-clinical, strengths-based conversation</span></div>
+        </div>
+        <div class="pathway-step">
+          <div class="step-num">3</div>
+          <div class="step-text"><strong>Navigation Plan</strong><span>Prioritized needs and resource matching</span></div>
+        </div>
+        <div class="pathway-step">
+          <div class="step-num">4</div>
+          <div class="step-text"><strong>Warm Referral</strong><span>3P contacts the receiving organization on the client's behalf</span></div>
+        </div>
+        <div class="pathway-step">
+          <div class="step-num">5</div>
+          <div class="step-text"><strong>Follow-Up</strong><span>Within 48 hours, ongoing as needed</span></div>
+        </div>
+        <div class="pathway-step">
+          <div class="step-num">6</div>
+          <div class="step-text"><strong>Outcome Tracking</strong><span>Housing secured, legal aid connected, and more</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-programs -->
+
+<!-- ═══════════════════════════════════════════ PAGE: GET INVOLVED ═══════ -->
+<div id="page-get-involved" class="page">
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <p class="eyebrow">Get Involved</p>
+      <h1>There Is Room for You Here</h1>
+      <p>Whether you are a young adult seeking support, a professional wanting to volunteer, or an organization looking to partner, we want to hear from you.</p>
+    </div>
+  </div>
+
+  <!-- Email list form -->
+  <section>
+    <p class="eyebrow">Stay in the Loop</p>
+    <h2>Join Our Email List</h2>
+    <p>We are not fundraising yet. We are building. Join our email list to receive quarterly updates, event invitations, and the announcement when we are ready to accept donations.</p>
+
+    <div class="form-card">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" placeholder="Your first name" />
+        </div>
+        <div class="form-group">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" placeholder="Your last name" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="you@example.com" />
+      </div>
+      <div class="form-group">
+        <label for="zip">Zip Code <span style="font-weight:400; color:var(--mid);">(optional)</span></label>
+        <input type="text" id="zip" placeholder="Helps us understand our reach" />
+      </div>
+      <div class="form-group">
+        <label>I am interested in:</label>
+        <div class="checkbox-group">
+          <label class="checkbox-item"><input type="checkbox" /> Volunteering</label>
+          <label class="checkbox-item"><input type="checkbox" /> Board service</label>
+          <label class="checkbox-item"><input type="checkbox" /> Partnerships</label>
+          <label class="checkbox-item"><input type="checkbox" /> General updates</label>
+        </div>
+      </div>
+      <button class="btn btn-primary" style="width:100%; padding: 0.85rem;">Subscribe</button>
+      <p class="form-note">We respect your privacy. We do not use tracking pixels without disclosure. Your information will never be sold.</p>
+    </div>
+  </section>
+
+  <!-- Volunteer -->
+  <section style="padding-top:0;">
+    <p class="eyebrow">Volunteer</p>
+    <h2>Be a Peer Navigator</h2>
+    <p>We are recruiting our first five volunteer peer navigators. This is not a casual volunteer role. It requires a 4-hour trauma-informed training, a background check ($50 to $75, covered by us), and a commitment to monthly supervision.</p>
+
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top:1.5rem;">
+      <div class="program-block">
+        <h3 style="color:var(--orange);">What You Will Do</h3>
+        <ul style="list-style:none; margin-top:0.5rem; display:flex; flex-direction:column; gap:0.5rem;">
+          <li style="font-size:0.93rem; color:var(--mid); padding-left:1.2rem; position:relative;"><span style="position:absolute;left:0;color:var(--orange);">&#8250;</span> Connect LGBTQ+ young adult survivors to housing, legal, health, and crisis resources</li>
+          <li style="font-size:0.93rem; color:var(--mid); padding-left:1.2rem; position:relative;"><span style="position:absolute;left:0;color:var(--orange);">&#8250;</span> Maintain boundaries and confidentiality</li>
+          <li style="font-size:0.93rem; color:var(--mid); padding-left:1.2rem; position:relative;"><span style="position:absolute;left:0;color:var(--orange);">&#8250;</span> Document interactions for outcome tracking</li>
+          <li style="font-size:0.93rem; color:var(--mid); padding-left:1.2rem; position:relative;"><span style="position:absolute;left:0;color:var(--orange);">&#8250;</span> Attend monthly check-ins with the Executive Director</li>
+        </ul>
+      </div>
+      <div class="program-block">
+        <h3 style="color:var(--purple);">Who We Are Looking For</h3>
+        <ul style="list-style:none; margin-top:0.5rem; display:flex; flex-direction:column; gap:0.5rem;">
+          <li style="font-size:0.93rem; color:var(--mid); padding-left:1.2rem; position:relative;"><span style="position:absolute;left:0;color:var(--purple);">&#8250;</span> Survivors, allies, social work students, retired professionals</li>
+          <li style="font-size:0.93rem; color:var(--mid); padding-left:1.2rem; position:relative;"><span style="position:absolute;left:0;color:var(--purple);">&#8250;</span> People who can listen without fixing</li>
+          <li style="font-size:0.93rem; color:var(--mid); padding-left:1.2rem; position:relative;"><span style="position:absolute;left:0;color:var(--purple);">&#8250;</span> People who understand that trust is built slowly</li>
+        </ul>
+      </div>
+    </div>
+    <a href="mailto:info@phoenixprideproject.org" class="btn btn-purple mt-2">Email Us to Learn More</a>
+  </section>
+
+  <!-- Partner -->
+  <section style="padding-top:0; padding-bottom:5rem;">
+    <p class="eyebrow">Partnerships</p>
+    <h2>Organizations, Let's Talk</h2>
+    <p>We do not duplicate services. We connect young adults to them. If your organization serves LGBTQ+ young adults, trafficking survivors, or those escaping survival sex work in Clark County, we want to know you.</p>
+    <p style="margin-top:1rem; font-weight:600; color:var(--charcoal);">We are especially interested in partnerships with:</p>
+    <ul style="list-style:none; margin-top:0.75rem; display:flex; flex-direction:column; gap:0.5rem;">
+      <li style="padding-left:1.2rem; position:relative; color:var(--mid); font-size:0.95rem;"><span style="position:absolute;left:0;color:var(--teal);">&#8250;</span> Housing providers and shelters</li>
+      <li style="padding-left:1.2rem; position:relative; color:var(--mid); font-size:0.95rem;"><span style="position:absolute;left:0;color:var(--teal);">&#8250;</span> Legal aid organizations</li>
+      <li style="padding-left:1.2rem; position:relative; color:var(--mid); font-size:0.95rem;"><span style="position:absolute;left:0;color:var(--teal);">&#8250;</span> Mental health clinics with LGBTQ+ affirming care</li>
+      <li style="padding-left:1.2rem; position:relative; color:var(--mid); font-size:0.95rem;"><span style="position:absolute;left:0;color:var(--teal);">&#8250;</span> Schools and workforce programs</li>
+      <li style="padding-left:1.2rem; position:relative; color:var(--mid); font-size:0.95rem;"><span style="position:absolute;left:0;color:var(--teal);">&#8250;</span> Other LGBTQ+ service organizations</li>
+    </ul>
+    <a href="mailto:info@phoenixprideproject.org?subject=Partnership Inquiry" class="btn btn-teal mt-2">Email Us About Partnerships</a>
+  </section>
+
+</div><!-- /page-get-involved -->
+
+<!-- ═══════════════════════════════════════════ PAGE: SUPPORT ═══════ -->
+<div id="page-support" class="page">
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <p class="eyebrow">Support Us</p>
+      <h1>We Will Ask Soon. Not Yet.</h1>
+      <p>Here is where we are, and here is the plan for when we are ready.</p>
+    </div>
+  </div>
+
+  <section>
+    <h2>Why We Are Not Taking Donations Yet</h2>
+    <div class="quote-block">
+      <p>Phoenix Pride Project is actively pursuing 501(c)(3) status. Until that is approved, we cannot offer tax-deductible receipts. We believe in doing this right from the start.</p>
+    </div>
+    <p>Our Year 1 budget goal is $27,600. That covers peer navigator training, insurance, a simple website, quarterly workshops, and the first Community Pride Circles. When we are ready to fundraise, we will be transparent about every dollar.</p>
+    <p>In the meantime, the best way to support us is to join our email list, share our name, and show up.</p>
+    <a href="#" class="btn btn-primary mt-1" onclick="showPage('get-involved')">Join the Email List</a>
+
+    <div style="margin-top:3rem;">
+      <p class="eyebrow">Future Giving Levels</p>
+      <h2>When We Are Ready, Here Is How You Can Give</h2>
+      <p>These are the giving levels we will launch once our 501(c)(3) status is approved. We are sharing them now because transparency matters.</p>
+
+      <table class="donor-table" style="margin-top:1.5rem;">
+        <thead>
+          <tr>
+            <th>Level</th>
+            <th>Annual Gift</th>
+            <th>What You Receive</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="level-name">🔥 Flame Spark</td>
+            <td>$25 to $99</td>
+            <td>Name on donor wall (website); quarterly impact email</td>
+          </tr>
+          <tr>
+            <td class="level-name">💛 Healing Ally</td>
+            <td>$100 to $249</td>
+            <td>Above, plus Phoenix Pride sticker and early access to updates</td>
+          </tr>
+          <tr>
+            <td class="level-name">🌟 Pride Builder</td>
+            <td>$250 to $499</td>
+            <td>Above, plus social media shout-out and exclusive donor newsletter</td>
+          </tr>
+          <tr>
+            <td class="level-name">🤝 Empowerment Circle</td>
+            <td>$500 to $999</td>
+            <td>Above, plus name in annual report and invitation to donor appreciation event</td>
+          </tr>
+          <tr>
+            <td class="level-name">✨ Legacy Torchbearer</td>
+            <td>$1,000 to $2,499</td>
+            <td>Above, plus featured spotlight on blog and custom thank-you gift</td>
+          </tr>
+          <tr>
+            <td class="level-name">🦅 Phoenix Guardian</td>
+            <td>$2,500+</td>
+            <td>Above, plus opportunity to sponsor a scholarship, VIP program tour, lunch with Executive Director</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note" style="margin-top:1rem;">Scholarship sponsorships available at Phoenix Guardian level beginning Year 2.</p>
+    </div>
+  </section>
+
+</div><!-- /page-support -->
+
+<!-- ═══════════════════════════════════════════ PAGE: CONTACT ═══════ -->
+<div id="page-contact" class="page">
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <p class="eyebrow">Contact</p>
+      <h1>Get in Touch</h1>
+      <p>We read every email. Response time is typically 48 hours.</p>
+    </div>
+  </div>
+
+  <section>
+    <h2>Reach Us</h2>
+    <p>Email us at <a href="mailto:info@phoenixprideproject.org" style="color:var(--purple); font-weight:600;">info@phoenixprideproject.org</a>. Whether you are a young adult seeking support, a potential volunteer, a board candidate, or an organization interested in partnering, we want to hear from you.</p>
+    <a href="mailto:info@phoenixprideproject.org" class="btn btn-purple mt-1">Send Us an Email</a>
+  </section>
+
+  <section style="padding-top:0; padding-bottom:5rem;">
+    <p class="eyebrow">Crisis Resources</p>
+    <h2>If You Need Help Right Now</h2>
+    <p>If you are a young adult in crisis, please contact the resources below while we build our capacity. These organizations are available now.</p>
+
+    <ul class="crisis-list">
+      <li>
+        <span class="org-name">The Trevor Project</span>
+        <span class="org-contact">1-866-488-7386 &nbsp;&middot;&nbsp; Text START to 678-678</span>
+      </li>
+      <li>
+        <span class="org-name">National Human Trafficking Hotline</span>
+        <span class="org-contact">1-888-373-7888 &nbsp;&middot;&nbsp; Text 233733</span>
+      </li>
+      <li>
+        <span class="org-name">Nevada Partnership for Homeless Youth</span>
+        <span class="org-contact">(702) 383-1332</span>
+      </li>
+      <li>
+        <span class="org-name">The LGBTQ Center of Southern Nevada</span>
+        <span class="org-contact">(702) 733-9800</span>
+      </li>
+    </ul>
+  </section>
+
+</div><!-- /page-contact -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Phoenix Pride Project (3P)</h4>
+      <p>Las Vegas, Nevada</p>
+      <p><a href="mailto:info@phoenixprideproject.org">info@phoenixprideproject.org</a></p>
+    </div>
+    <div class="footer-col" style="text-align:center;">
+      <h4>Status</h4>
+      <p>501(c)(3) status pending.<br>Not yet accepting tax-deductible donations.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <div class="footer-btns">
+        <button class="footer-btn" onclick="showPage('get-involved')">Join Email List</button>
+        <button class="footer-btn" onclick="showPage('contact')">Contact Us</button>
+        <button class="footer-btn" onclick="showPage('programs')">Our Programs</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Phoenix Pride Project. All rights reserved.</span>
+  </div>
+  <p class="legal-disclaimer">
+    Phoenix Pride Project is a Nevada nonprofit corporation in formation. We have applied for or are preparing to apply for 501(c)(3) federal tax-exempt status. Until that status is granted by the IRS, donations to Phoenix Pride Project are not tax-deductible. We are not currently soliciting or accepting donations. This website is for informational and community-building purposes only.
+  </p>
+</footer>
+
+<script>
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+
+    const page = document.getElementById('page-' + id);
+    if (page) page.classList.add('active');
+
+    const navLink = document.getElementById('nav-' + id);
+    if (navLink) navLink.classList.add('active');
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return false;
+  }
+
+  // Prevent default on nav links
+  document.querySelectorAll('.nav-links a, .footer-btn').forEach(el => {
+    if (el.getAttribute('href') === '#') {
+      el.addEventListener('click', e => e.preventDefault());
+    }
+  });
+</script>
+
+</body>
+</html>
